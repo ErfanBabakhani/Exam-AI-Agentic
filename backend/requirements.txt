@@ -1,0 +1,15 @@
+# Mirror install example intentionally disabled:
+# python -m pip install --index-url https://package-mirror.liara.ir/repository/pypi/simple -r backend/requirements.txt
+Django==5.2.1
+djangorestframework==3.16.0
+drf-spectacular==0.28.0
+django-cors-headers==4.4.0
+gunicorn==23.0.0
+PyJWT==2.10.1
+python-dotenv==1.1.1
+openai==2.6.1
+PyMuPDF==1.26.3
+Pillow==11.3.0
+httpx==0.28.1
+reportlab>=4.0
+pytest==8.4.1

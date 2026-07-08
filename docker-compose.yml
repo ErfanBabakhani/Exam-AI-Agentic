@@ -1,0 +1,42 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      network: host
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-change-me-before-sharing}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me-before-sharing}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/data/app.db}
+      STORAGE_ROOT: ${STORAGE_ROOT:-/app/storage}
+      CORS_ALLOW_ALL_ORIGINS: ${CORS_ALLOW_ALL_ORIGINS:-false}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+      AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY:-}
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT:-https://zanistagpteastus2.openai.azure.com/}
+      AZURE_OPENAI_DEPLOYMENT: ${AZURE_OPENAI_DEPLOYMENT:-gpt-5.4-mini}
+      AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION:-2024-12-01-preview}
+      AZURE_OPENAI_INPUT_USD_PER_1M_TOKENS: ${AZURE_OPENAI_INPUT_USD_PER_1M_TOKENS:-0.0}
+      AZURE_OPENAI_OUTPUT_USD_PER_1M_TOKENS: ${AZURE_OPENAI_OUTPUT_USD_PER_1M_TOKENS:-0.0}
+      ALLOW_MOCK_GRADING: ${ALLOW_MOCK_GRADING:-false}
+      # PIP_INDEX_URL: ${PIP_INDEX_URL:-https://mirror-pypi.runflare.com/simple}
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      - grader_data:/app/data
+      - grader_storage:/app/storage
+
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: ${NEXT_PUBLIC_API_BASE_URL:-http://localhost:8000/api}
+      # NPM_CONFIG_REGISTRY: ${NPM_CONFIG_REGISTRY:-https://package-mirror.liara.ir/repository/npm/}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  grader_data:
+  grader_storage:

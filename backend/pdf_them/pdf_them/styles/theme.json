@@ -1,0 +1,31 @@
+{
+  "name": "Zanista Gradient Report",
+  "version": "1.0.0",
+  "description": "Premium SaaS-style PDF theme for AI grading exports.",
+  "colors": {
+    "ink": "#111827",
+    "muted": "#64748B",
+    "paper": "#F8FAFC",
+    "card": "#FFFFFF",
+    "border": "#E2E8F0",
+    "primary": "#6D5DFB",
+    "primary_dark": "#312E81",
+    "cyan": "#22D3EE",
+    "pink": "#EC4899",
+    "green": "#10B981",
+    "amber": "#F59E0B",
+    "red": "#EF4444",
+    "blue_soft": "#EEF2FF",
+    "green_soft": "#ECFDF5",
+    "amber_soft": "#FFFBEB",
+    "red_soft": "#FEF2F2",
+    "cyan_soft": "#ECFEFF"
+  },
+  "page": {
+    "size": "A4",
+    "margin_left": 34,
+    "margin_right": 34,
+    "margin_top": 34,
+    "margin_bottom": 34
+  }
+}
