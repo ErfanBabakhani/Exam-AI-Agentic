@@ -164,6 +164,15 @@ Saved grading runs can be exported through:
 
 The current project includes a styled PDF export path on the backend and the frontend export action calls that backend endpoint.
 
+### Export Preview
+
+Repository demo assets for the generated grading export:
+
+- Preview image: `docs/previews/grading-export-demo-preview.png`
+- Demo PDF: `docs/previews/grading-export-demo.pdf`
+
+[![AI grading export demo](docs/previews/grading-export-demo-preview.png)](docs/previews/grading-export-demo.pdf)
+
 ## Testing
 
 Useful backend test commands:
