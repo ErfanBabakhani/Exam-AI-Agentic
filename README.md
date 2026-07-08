@@ -164,6 +164,14 @@ Saved grading runs can be exported through:
 
 The current project includes a styled PDF export path on the backend and the frontend export action calls that backend endpoint.
 
+### Site Demo
+
+Repository preview of the grading dashboard UI:
+
+- Demo image: `docs/previews/site-demo-dashboard.png`
+
+![AI exam grader dashboard demo](docs/previews/site-demo-dashboard.png)
+
 ### Export Preview
 
 Repository demo assets for the generated grading export:
